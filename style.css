@@ -1,0 +1,762 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #12000d;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatHeart linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    top: -20px;
+    animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ff3f81;
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 50;
+
+    box-shadow: 0 0 20px rgba(255, 63, 129, 0.7);
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at top, #7b164b, transparent 40%),
+        linear-gradient(135deg, #19000f, #4a062c, #17000d);
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.small-text {
+    color: #ff9fc5;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: clamp(55px, 10vw, 110px);
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #ff5b99;
+    text-shadow: 0 0 30px rgba(255, 91, 153, 0.7);
+}
+
+.nickname {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 34px;
+
+    color: #ffd0e1;
+}
+
+.heart {
+
+    font-size: 70px;
+
+    margin: 20px 0;
+
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+.intro {
+    color: #ffdbe8;
+    line-height: 1.8;
+}
+
+.start-btn {
+
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background: linear-gradient(45deg, #ff3f81, #ff77aa);
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(255, 63, 129, 0.35);
+
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 90px 20px;
+}
+
+section h2 {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 48px;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+.section-text {
+
+    text-align: center;
+
+    color: #eeb6cb;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+
+    text-align: center;
+
+    background: #210013;
+}
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 35px;
+}
+
+.time-box {
+
+    width: 120px;
+
+    padding: 25px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 120, 170, 0.3);
+
+    backdrop-filter: blur(10px);
+}
+
+.time-box span {
+
+    display: block;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    color: #ff75a8;
+}
+
+.time-box small {
+    color: #e9b5c9;
+}
+
+#birthdayStatus {
+
+    margin-top: 25px;
+
+    color: #ffb8d2;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+
+    background:
+        linear-gradient(#1b0010, #35001f);
+}
+
+.gallery {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.gallery img {
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 2px solid rgba(255, 105, 160, 0.3);
+
+    transition: 0.5s;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.gallery img:hover {
+
+    transform: scale(1.04) rotate(1deg);
+
+    border-color: #ff5f9c;
+
+    box-shadow:
+        0 0 30px rgba(255, 80, 140, 0.5);
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter-section {
+
+    background: #16000c;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.letter {
+
+    width: min(800px, 100%);
+
+    padding: 50px 35px;
+
+    background: #fff1f6;
+
+    color: #4d102d;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.letter h2 {
+
+    color: #b51e5f;
+
+    margin-bottom: 30px;
+}
+
+.letter-icon {
+
+    text-align: center;
+
+    font-size: 50px;
+}
+
+.letter-text {
+
+    white-space: pre-line;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 25px;
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+.signature {
+
+    margin-top: 30px;
+
+    text-align: right;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 25px;
+}
+
+.signature span {
+    color: #d6256e;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift-section {
+
+    text-align: center;
+
+    background: #260018;
+}
+
+.gift-section > p {
+    color: #eab5ca;
+}
+
+.gift-box {
+
+    width: 160px;
+
+    height: 140px;
+
+    margin: 50px auto 30px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: 0.4s;
+}
+
+.gift-box:hover {
+    transform: scale(1.08);
+}
+
+.gift-body {
+
+    width: 150px;
+
+    height: 110px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    background: #ff397c;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 55px;
+}
+
+.gift-lid {
+
+    width: 170px;
+
+    height: 35px;
+
+    position: absolute;
+
+    top: 5px;
+
+    left: -10px;
+
+    background: #ff76a5;
+
+    border-radius: 8px;
+
+    z-index: 2;
+}
+
+.surprise-message {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 70, 130, 0.1);
+
+    border: 1px solid rgba(255, 100, 160, 0.3);
+
+    display: none;
+
+    animation: appear 0.8s ease;
+}
+
+.surprise-message h3 {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 32px;
+
+    color: #ff8eb6;
+
+    margin-bottom: 15px;
+}
+
+.surprise-message p {
+    color: #ffd4e3;
+    line-height: 1.8;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-section {
+
+    text-align: center;
+
+    background: #17000d;
+}
+
+.music-card {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 100, 160, 0.2);
+}
+
+.music-icon {
+
+    font-size: 55px;
+
+    animation: musicPulse 1s infinite alternate;
+}
+
+@keyframes musicPulse {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.music-card p {
+
+    color: #efb6ca;
+
+    margin: 15px 0 25px;
+}
+
+.play-btn {
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff4c8b;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle, #760f48, #1b000f 65%);
+}
+
+.final-content {
+
+    max-width: 750px;
+}
+
+.big-heart {
+
+    font-size: 100px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+.final-section h2 {
+
+    font-size: clamp(45px, 8vw, 80px);
+
+    margin: 20px 0;
+}
+
+.final-section h2 span {
+    color: #ff6da2;
+}
+
+.final-section p {
+
+    color: #f5c4d6;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+.final-section h3 {
+
+    margin-top: 30px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 35px;
+
+    color: #ff86b3;
+}
+
+.made-by {
+
+    margin-top: 60px;
+
+    font-size: 14px !important;
+
+    color: #b9859c !important;
+}
+
+.made-by span {
+    color: #ff78aa;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 70px 15px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .nickname {
+        font-size: 28px;
+    }
+
+    section h2 {
+        font-size: 40px;
+    }
+
+    .time-box {
+        width: 85px;
+        padding: 18px 5px;
+    }
+
+    .time-box span {
+        font-size: 28px;
+    }
+
+    .gallery img {
+        height: 250px;
+    }
+
+    .letter {
+        padding: 35px 20px;
+    }
+
+    .letter-text {
+        font-size: 21px;
+    }
+
+    .music-btn {
+        right: 12px;
+        top: 12px;
+    }
+}
