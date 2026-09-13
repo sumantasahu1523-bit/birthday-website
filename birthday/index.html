@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div id="hearts"></div>
+
+    <!-- Confetti -->
+    <div id="confetti"></div>
+
+    <!-- MUSIC -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC BUTTON -->
+    <button id="musicButton" class="music-btn">
+        🎵
+    </button>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-text">
+                ✨ A special day for someone very special ✨
+            </p>
+
+            <h1>
+                Happy Birthday
+                <span id="displayName">My Love</span> ❤️
+            </h1>
+
+            <p class="nickname" id="displayNickname">
+                My Princess
+            </p>
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <p class="intro">
+                Today is not just another day...
+                <br>
+                Today is the day someone amazing was born.
+            </p>
+
+            <button class="start-btn" onclick="startSurprise()">
+                🎁 Open Your Surprise
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section">
+
+        <h2>⏰ Your Special Day</h2>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+        <p id="birthdayStatus"></p>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery-section">
+
+        <h2>📸 Beautiful Memories</h2>
+
+        <p class="section-text">
+            Some beautiful moments that I always want to remember ❤️
+        </p>
+
+        <div id="photoGallery" class="gallery"></div>
+
+    </section>
+
+
+    <!-- LOVE LETTER -->
+    <section class="letter-section">
+
+        <div class="letter">
+
+            <div class="letter-icon">
+                💌
+            </div>
+
+            <h2>A Letter For You</h2>
+
+            <div id="letterText" class="letter-text"></div>
+
+            <p class="signature">
+                With all my love,<br>
+                <span id="signatureName">Sumanta</span> ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GIFT -->
+    <section class="gift-section">
+
+        <h2>🎁 One More Surprise</h2>
+
+        <p>
+            There is something waiting for you...
+        </p>
+
+        <div id="giftBox" class="gift-box" onclick="openGift()">
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-body">
+                🎁
+            </div>
+
+        </div>
+
+        <div id="surpriseMessage" class="surprise-message">
+
+            <h3>💖 You Are My Favorite Person 💖</h3>
+
+            <p id="surpriseText">
+                I hope this little surprise makes you smile.
+                You deserve all the happiness in the world.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MUSIC SECTION -->
+    <section class="music-section">
+
+        <div class="music-card">
+
+            <div class="music-icon">
+                🎶
+            </div>
+
+            <h2>Our Special Song</h2>
+
+            <p id="songName">
+                Playing a song for you ❤️
+            </p>
+
+            <button onclick="toggleMusic()" class="play-btn">
+                ▶ Play / Pause
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+    <section class="final-section">
+
+        <div class="final-content">
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h2>
+                Happy Birthday,
+                <span id="finalName">My Love</span>!
+            </h2>
+
+            <p>
+                May your smile always stay this beautiful.
+                <br>
+                May all your dreams come true.
+                <br><br>
+                And may I always be there to celebrate
+                every beautiful moment with you. ❤️
+            </p>
+
+            <h3>
+                Forever & Always ❤️
+            </h3>
+
+            <p class="made-by">
+                Made with ❤️ by <span id="finalYourName">Sumanta</span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
